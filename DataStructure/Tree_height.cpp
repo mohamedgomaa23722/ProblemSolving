@@ -27,3 +27,16 @@ class Node {
         
         return (leftLen > rightLen)? leftLen:rightLen;
     }
+
+//Answer Optimization
+
+    int height(Node* root) {
+        // Write your code here.
+        if(!root){
+            return -1;
+        }
+        int leftLen=height(root->left);
+        int rightLen=height(root->right);
+        
+        return ((leftLen > rightLen)? leftLen:rightLen)+1;
+    }
